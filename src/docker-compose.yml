@@ -1,0 +1,43 @@
+version: '3.4'
+
+services:
+  currency-api:
+    image: currency-api
+    container_name: currency-api
+    build:
+      context: .
+      dockerfile: RateReader.Api/Dockerfile
+    networks:
+      - dev
+    ports:
+      - 80:80
+    environment:
+      VIRTUAL_HOST: currency-api.local
+      ASPNETCORE_ENVIRONMENT: Development
+      
+  currency-scheduller:
+    image: currency-scheduler
+    container_name: currency-scheduler
+    build:
+      context: .
+      dockerfile: RateReader.Scheduler/Dockerfile
+    environment:
+      TZ: Europe/Moscow
+    networks:
+      - dev
+
+  currency-db:
+    container_name: currency-db
+    ports:
+     - 1433:1433
+    image: microsoft/mssql-server-linux:2017-latest
+    networks:
+      - dev
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: SuperS3cretPassw0rd
+      MSSQL_COLLATION: Cyrillic_General_CI_AS
+
+networks:
+  dev:
+    driver: bridge

@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  currency-api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+
+  currency-scheduller:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
