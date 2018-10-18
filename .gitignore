@@ -1,0 +1,37 @@
+### OS directories
+.Spotlight-V100
+.Trashes
+
+### OS files
+.DS_Store
+.DS_Store?
+Thumbs.db
+
+### IDE directories
+.vs
+.vscode
+.idea
+
+### IDE files
+*.suo
+*.csproj.user
+*.xproj.user
+*.DotSettings.user
+*.userprefs
+*.pubxml
+
+### Full path
+/deps/*
+/samples/*
+/logs/*
+/tmp/*
+*/bin/*
+*.dll
+*.pdb
+*.cache
+
+src/Docker/bin
+src/Docker/obj
+
+**/bin/*
+**/obj/*
