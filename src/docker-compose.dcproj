@@ -5,8 +5,8 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>6432fc04-8190-4bf1-a874-98334d003f2a</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>http://currency-api.local</DockerServiceUrl>
-    <DockerServiceName>ratereader.api</DockerServiceName>
+    <DockerServiceUrl>http://currency-api.local/swagger</DockerServiceUrl>
+    <DockerServiceName>currency-api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
